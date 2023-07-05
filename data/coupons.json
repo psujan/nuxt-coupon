@@ -1,39 +1,69 @@
 {
-  "coupons":[
+  "coupons": [
     {
-      "id":1,
-      "title":"Rs 50 worth balance coupon",
-      "rp":500,
-      "start":"07/05/2023",
-      "end":"15/05/2023",
-      "isRedeemed":0,
-      "afterRedeem":{
-        "code":"ER5CPW",
-        "message":"500 Reward Point has been successfully redeemed"
+      "id": 1,
+      "title": "Rs50 worth balance coupon",
+      "rp": 500,
+      "start": "07/05/2023",
+      "end": "15/05/2023",
+      "isRedeemed": 0,
+      "afterRedeem": {
+        "code": "ER5CPW"
       }
     },
     {
-      "id":2,
-      "title":"Rs 100 worth recharge coupon",
-      "rp":800,
-      "start":"05/01/2023",
-      "end":"20/06/2023",
-      "isRedeemed":0,
-      "afterRedeem":{
-        "code":"YI98MG",
-        "message":"800 Reward Point has been successfully redeemed"
+      "id": 2,
+      "title": "Rs100 worth recharge coupon",
+      "rp": 800,
+      "start": "05/01/2023",
+      "end": "20/06/2023",
+      "isRedeemed": 0,
+      "afterRedeem": {
+        "code": "YI98MG"
       }
     },
     {
-      "id":3,
-      "title":"Rs 150 worth movie ticket coupon",
-      "rp":600,
-      "start":"05/05/2023",
-      "end":"25/05/2023",
-      "isRedeemed":0,
-      "afterRedeem":{
-        "code":"MQ45X0",
-        "message":"600 Reward Point has been successfully redeemed"
+      "id": 3,
+      "title": "Rs150 worth movie ticket coupon",
+      "rp": 600,
+      "start": "05/05/2023",
+      "end": "25/05/2023",
+      "isRedeemed": 0,
+      "afterRedeem": {
+        "code": "MQ45X0"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Rs150 worth movie ticket coupon",
+      "rp": 1500,
+      "start": "05/05/2023",
+      "end": "25/05/2023",
+      "isRedeemed": 0,
+      "afterRedeem": {
+        "code": "MQ45X0"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Rs100 worth gift voucher ",
+      "rp": 100,
+      "start": "03/05/2023",
+      "end": "27/05/2023",
+      "isRedeemed": 0,
+      "afterRedeem": {
+        "code": "CG8V4T"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Rs100 worth patho ride",
+      "rp": 100,
+      "start": "08/05/2023",
+      "end": "20/05/2023",
+      "isRedeemed": 0,
+      "afterRedeem": {
+        "code": "PR8N9F"
       }
     }
   ]
