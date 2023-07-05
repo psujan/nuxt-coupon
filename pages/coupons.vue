@@ -107,13 +107,13 @@ watch(
   <div class="min-h-screen bg-gray-100 screen">
     <div class="md:container mx-auto">
       <div class="md:px-5 sm:px-1 flex">
-        <div class="basis-1/5 relative">
+        <div class="hidden lg:block basis-1/5 relative">
           <figure class="sticky">
             <img src="/images/side-cover.png" alt="" />
           </figure>
         </div>
         <div
-          class="basis-4/5 bg-slate-50 rounded-md mt-12 relative sm:p-2 md:px-6 md:py-3 lg:w-4/5 sm:w-auto"
+          class="lg:basis-4/5 bg-slate-50 rounded-md mt-12 relative sm:p-2 md:px-6 md:py-3 lg:w-4/5 sm:w-auto"
         >
           <span
             class="title absolute left-4 px-4 py-2 bg-primary text-white text-sm"
@@ -121,7 +121,7 @@ watch(
               <span class="pl-1">{{ computedRewardPoint }} Rewward Points</span>
             </h3></span
           >
-          <div class="pt-6 pb-4 border-b">
+          <div class="pt-6 pb-4 px-3 mt-2 lg:px-0 lg:mt-0 border-b">
             <div class="flex justify-between">
               <div class="min-w-[20px]">
                 <h4
