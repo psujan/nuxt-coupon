@@ -15,10 +15,13 @@ const props = defineProps({
 //emits
 const emit = defineEmits(["update:loginModal"]);
 
-//data
-const form = reactive({
+const FORM = {
   username: "",
   password: "",
+};
+//data
+const form = reactive({
+  ...FORM,
 });
 
 //computed properties
@@ -40,10 +43,18 @@ const handleSubmit = async () => {
   const spin = $loading.show();
   await authenticateUser(form);
   spin.hide();
-  if (authenticated) {
+  if (authenticated.value) {
     Notify.toast("Login Successfull");
     emit("update:loginModal", false);
+    clearForm();
+    return;
   }
+  Notify.toast("Something Went Wrong", "error");
+};
+
+const clearForm = () => {
+  form.username = "";
+  form.password = "";
 };
 
 const validateLogin = () => {
@@ -71,6 +82,7 @@ const validateLogin = () => {
     :allow-ok-close="false"
     ok-title="Submit"
     @onSuccess="handleSubmit"
+    @onClose="clearForm"
   >
     <form @submit.prevent="handleSubmit">
       <div class="mb-5">
