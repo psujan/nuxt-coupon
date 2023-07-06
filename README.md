@@ -61,3 +61,18 @@ yarn preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Demo
+
+Please Visit [here](https://nuxt-coupon-demo.netlify.app/) to view the demo
+
+This site is using dummy authentication provided by [dummyjson](https://dummyjson.com/docs/auth).
+
+Login Credentials
+
+Username : 'kminchelle',
+Password: '0lelplR'
+
+Please feel free to create issues!
+
+Thankyou! 🙏🙏
