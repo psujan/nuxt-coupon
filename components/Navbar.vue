@@ -1,5 +1,22 @@
 <script setup>
-import { Dropdown, ListGroup, ListGroupItem } from "flowbite-vue";
+import { storeToRefs } from "pinia";
+import { useAuthStore } from "../store/auth";
+const { authenticated, user } = storeToRefs(useAuthStore());
+const { logUserOut } = useAuthStore();
+const router = useRouter();
+import { Dropdown } from "flowbite-vue";
+//data
+const loginModal = ref(false);
+
+//methods
+const openLoginModal = () => {
+  loginModal.value = true;
+};
+
+const handleLogout = () => {
+  logUserOut();
+  router.push("/");
+};
 </script>
 
 <template>
@@ -15,12 +32,12 @@ import { Dropdown, ListGroup, ListGroupItem } from "flowbite-vue";
         </div>
 
         <div class="flex space-x-5 justify-center items-center pl-2">
-          <div class="d-flex">
+          <div class="d-flex" v-if="authenticated">
             <dropdown placement="bottom">
               <template #trigger="{ toggle }">
                 <span @click="toggle" class="cursor-pointer">
                   <Icon name="ri:user-line" color="black" size="24" />
-                  Sujan
+                  {{ user.firstName }}
                   <Icon
                     name="ri:arrow-drop-down-line"
                     color="black"
@@ -30,21 +47,26 @@ import { Dropdown, ListGroup, ListGroupItem } from "flowbite-vue";
               </template>
               <ul class="w-48">
                 <li class="hover:bg-gray-100 py-2 px-3">
-                  <a href="javascript:;" class="text-base text-gray-500"
+                  <a
+                    href="javascript:;"
+                    @click="handleLogout"
+                    class="text-base text-gray-500"
                     >Logout</a
                   >
                 </li>
               </ul>
             </dropdown>
           </div>
-
-          <!-- <button
+          <button
+            v-else
+            @click="openLoginModal"
             class="bg-green-50 text-primary py-2 px-4 rounded-md text-sm ease-in hover:bg-emerald-100"
           >
             Sign In
-          </button> -->
+          </button>
         </div>
       </nav>
     </div>
+    <Login v-model:loginModal="loginModal"></Login>
   </header>
 </template>

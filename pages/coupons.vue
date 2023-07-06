@@ -2,7 +2,6 @@
 import { Dropdown } from "flowbite-vue";
 import Notify from "../utils/Notify";
 import $loading from "../utils/PageLoader";
-// import BaseModal from "../components/base/BaseModal.vue";
 import { toClipboard } from "@soerenmartius/vue3-clipboard";
 const coupons = ref("");
 const rows = reactive({
@@ -43,7 +42,6 @@ const handleRedeem = (item) => {
   const spin = $loading.show();
   const temp = coupons.value;
   coupons.value = temp.map((x) => {
-    console.log("looping", x);
     return {
       ...x,
       isRedeemed: x.id == item.id ? 1 : x.isRedeemed,
@@ -101,6 +99,15 @@ watch(
     immediate: true,
   }
 );
+
+//head
+useHead({
+  titleTemplate: `Coupons | ${computedRewardPoint.value || "0"} RP`,
+});
+
+definePageMeta({
+  middleware: "auth", // this should match the name of the file inside the middleware directory
+});
 </script>
 
 <template>

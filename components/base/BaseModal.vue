@@ -47,7 +47,7 @@
               <button class="modal-btn modal-btn-flat" @click="closeModal">
                 Cancel
               </button>
-              <button class="modal-btn" @click="onOk">Ok</button>
+              <button class="modal-btn" @click="onOk">{{ okTitle }}</button>
             </div>
             <slot name="modal-footer" />
           </div>
@@ -115,6 +115,10 @@ const props = defineProps({
   allowOkClose: {
     type: Boolean,
     default: true,
+  },
+  okTitle: {
+    type: String,
+    default: "Ok",
   },
 });
 /**
